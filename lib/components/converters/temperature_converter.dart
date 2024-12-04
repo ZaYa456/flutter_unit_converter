@@ -8,12 +8,14 @@ class TemperatureConverter extends StatefulWidget {
 
 class _TemperatureConverterState extends State<TemperatureConverter> {
   TextEditingController _fromController = TextEditingController();
+
   // The following variable is for the decimal parts of the conversion results in the ListView
   int _decimalPlaces = 2;
   final List<int> _decimalOptions = [1, 2, 3, 4, 5];
 
   String _fromUnit = 'C';
 
+  // This map works like the "if else if" logic
   final Map<String, Map<String, double Function(double)>> _conversionFunctions =
       {
     'C': {
